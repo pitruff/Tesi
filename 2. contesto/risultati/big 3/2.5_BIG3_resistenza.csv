@@ -1,0 +1,4 @@
+giocatore;incontri;carico_medio;scarto_carico_basso;scarto_carico_alto;coeff_per_100_minuti
+Rafael Nadal;1100;448;0.56;5.50;0.469
+Novak Djokovic;1001;394;0.91;4.53;0.379
+Roger Federer;1395;386;1.32;1.75;0.049

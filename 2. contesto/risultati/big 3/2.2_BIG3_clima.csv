@@ -1,0 +1,4 @@
+giocatore;incontri;temperatura_media;effetto_caldo;corr_temperatura;corr_umidita;corr_densita
+Novak Djokovic;868;19.5;3.11;0.022;-0.004;0.009
+Rafael Nadal;1011;18.9;-3.85;-0.021;-0.025;0.067
+Roger Federer;1091;19.0;-5.27;-0.044;-0.015;0.052

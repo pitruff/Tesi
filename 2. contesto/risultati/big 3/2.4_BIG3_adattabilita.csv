@@ -1,0 +1,10 @@
+giocatore;superficie;n_esordi;scarto_transizione;scarto_a_regime;costo_adattamento
+Roger Federer;H;23;17.91;2.51;-15.39
+Rafael Nadal;C;19;20.96;11.62;-9.34
+Novak Djokovic;G;15;10.60;1.88;-8.72
+Roger Federer;C;20;-1.00;-6.40;-5.40
+Rafael Nadal;H;18;1.02;-3.63;-4.65
+Roger Federer;G;21;2.87;3.48;0.61
+Novak Djokovic;C;17;-3.76;0.74;4.50
+Rafael Nadal;G;14;-14.20;-6.52;7.67
+Novak Djokovic;H;18;-5.35;3.09;8.44
