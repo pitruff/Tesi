@@ -57,8 +57,8 @@ WHERE (torneo, stagione) IN (
     ('Roland Garros', 2019), ('Roland Garros', 2020), ('Canada', 2022),('Canada', 2023), ('Cincinnati', 2023),
     ('Cincinnati', 2022), ('Shanghai', 2017), ('Shanghai', 2018), ('Tour Finals', 2018), ('Tour Finals', 2019)
 );
---segiamo le prime e le ultime edizioni con una nuova marca di pallina  
--- per dagli un peso maggiore, in quanto riteniamo siano le più informative
+--segniamo le prime e le ultime edizioni con una nuova marca di pallina  
+-- per dargli un peso maggiore, in quanto riteniamo siano le più informative
 
 
 
@@ -86,12 +86,11 @@ SELECT i.marca, p.player_id,
 FROM incontri_palla i, player p
 WHERE p.player_id = i.player_id
 GROUP BY i.marca, p.player_id, p.first_name, p.last_name
-HAVING count(*) >= 25; --qui siamo costretti ad abbssare la soglia perché con aclune marche verrebbero fuori davvero pochi giocatori con sufficienti partite
+HAVING count(*) >= 25; --qui siamo costretti ad abbassare la soglia perché con alcune marche verrebbero fuori davvero pochi giocatori con sufficienti partite
 
 
 --   QUERY
 -- Una tabella per marca, ordinata per prestazione.
--- Adatta i nomi a quelli restituiti dalla query qui sopra.
 SELECT giocatore, incontri, vittorie_grezze, scarto_grezzo, scarto_neutro
 FROM perf_palla WHERE marca = 'Dunlop' ORDER BY scarto_neutro DESC LIMIT 100;
 

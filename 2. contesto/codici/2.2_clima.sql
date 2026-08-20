@@ -140,7 +140,7 @@ CREATE INDEX ON match_giorno (giorno);
 
 
 -- ----------------------------------------------------------------------------
--- 8. Verifiche di coerenza, da riportare in appendice.
+-- 8. Verifiche di coerenza.
 --    8a. Lo scostamento dall'inizio del torneo deve crescere ordinatamente dal
 --        primo turno alla finale: se l'ordine e' incoerente, l'abbinamento ha
 --        prodotto collisioni fra settimane vicine.

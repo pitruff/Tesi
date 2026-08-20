@@ -8,7 +8,7 @@ $$ LANGUAGE sql IMMUTABLE;
 
 
 
---Nel scrivere la maggior parte di queste metriche, soprattutto della seconda sezione, è stato utile utilizzare in tutte una CTE
+--Nello scrivere la maggior parte di queste metriche, soprattutto della seconda sezione, è stato utile utilizzare in tutte una CTE
 --che raccogliesse alcune informazioni specifiche per ogni partita. Seppure ci fosse qualche variazione tra le varie query, 
 --l'impianto di queste CTE era in tutte analogo, quindi si è deciso di costruire una tabella a priori
 

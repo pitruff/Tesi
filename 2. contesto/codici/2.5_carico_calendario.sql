@@ -50,7 +50,7 @@ SELECT full_name(p.first_name, p.last_name) AS giocatore,
        round(100.0 * a.scarto::numeric, 2) AS scarto_carico_alto,  --quanto si vince in più dell'attesa quando c'è un carico di tante partite precedenti o lunghe
        round(100.0 * t.pendenza::numeric * 100, 3) AS coeff_per_100_minuti
        --Le due moltiplicazioni per 100 traducono il residuo in punti percentuali e riscalano il carico a blocchi di cento minuti, 
-       --quindi coeff_per_100_minuti pari a −0,5 significa mezzo punto percentuale di rendimento in meno sotto l'attesa per ogni 
+       --quindi coeff_per_100_minuti pari a -0,5 significa mezzo punto percentuale di rendimento in meno sotto l'attesa per ogni 
        --cento minuti giocati nella quindicina precedente, mentre un valore positivo indica chi rende meglio quando è più carico.
 FROM totali t, bassi b, alti a, player p
 WHERE b.player_id = t.player_id

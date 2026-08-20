@@ -1,6 +1,6 @@
 -- 5 query
 
---i più specializzati n generale
+--i più specializzati in generale
 SELECT full_name(p.first_name, p.last_name) AS giocatore,
        o.surface AS superficie,
        count(*) AS incontri,
@@ -17,7 +17,7 @@ LIMIT 100;
 
 
 --specialisti di terra
---Troviamo sorpendentemente berrettini, nonostante il suo potente
+--Troviamo sorpendentemente Berrettini, nonostante il suo potente
 --servizio potesse far pensare che Matteo renda meglio su cemento
 --o su erba (dove ha anche fatto finale a Wimbledon)
 SELECT full_name(p.first_name, p.last_name) AS giocatore,

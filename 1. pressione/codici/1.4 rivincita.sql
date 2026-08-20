@@ -49,12 +49,6 @@ CREATE INDEX ON coppie (vincitore_precedente);
 ANALYZE coppie;
 
 
---L'interrogazione isola, per ciascun giocatore, le sfide successive a una sconfitta e quelle successive a una vittoria contro il medesimo
--- avversario, confrontando le vittorie effettivamente ottenute con quelle attese secondo le valutazioni Elo antecedenti l'incontro. 
---Poiché ogni sfida ammette due soli esiti, la sua varianza vale p(1−p) e,  considerandoli esiti indipendenti, le varianze dei singoli 
---confronti si sommano; la radice quadrata di tale somma è la deviazione standard, ossia l'oscillazione imputabile al solo caso. 
---Il rapporto fra lo scarto osservato e la deviazione standard misura quindi la distanza dall'attesa, denominati qui "scarto_rivincita" 
--- e "scarto_conferma", difficilmente casuali oltre il valore di due.
 
 --QUERY:
 WITH riv_ok AS (

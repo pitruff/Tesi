@@ -13,7 +13,7 @@ WITH partecipazioni AS (
     AND e.tournament_event_id = r.tournament_event_id
     AND e.season BETWEEN 2000 AND 2021 --non vediamo gli anni prima del 2000 perché i punti assegnati ai vari tornei erano molto più variabili allora
 ),
-scala AS ( --andiamo a normalizzare sui punti in palio di ogni torneo perché nel 2009 sono stati raddoppiati i punti, quindi chiunque quell'anno avrebbeun tasso di riconferma altissimo
+scala AS ( --andiamo a normalizzare sui punti in palio di ogni torneo perché nel 2009 sono stati raddoppiati i punti, quindi chiunque quell'anno avrebbe un tasso di riconferma altissimo
     SELECT season, level, max(punti) AS punti_titolo
     FROM partecipazioni
     GROUP BY season, level
@@ -27,7 +27,7 @@ quote AS (
     WHERE s.season = p.season
     AND s.level  = p.level
 ),
-confronto AS ( --per orni stagione per ogni torneo e per ogni giocatore, abbiamo la quota dei punti che ha conquistato e quella dei punti che aveva conquistato l'anno prima (da difendere)
+confronto AS ( --per ogni stagione per ogni torneo e per ogni giocatore, abbiamo la quota dei punti che ha conquistato e quella dei punti che aveva conquistato l'anno prima (da difendere)
     SELECT c.player_id,
            c.season,
            c.quota,
