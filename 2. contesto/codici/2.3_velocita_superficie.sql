@@ -8,17 +8,16 @@
 
 SELECT full_name(p.first_name, p.last_name) AS giocatore,
        count(*) AS incontri,
-       sum(CASE WHEN o.court_speed >= 55 THEN 1 ELSE 0 END) AS veloci,
-       sum(CASE WHEN o.court_speed <= 45 THEN 1 ELSE 0 END) AS lenti,
+       sum(CASE WHEN o.court_speed >= 60 THEN 1 ELSE 0 END) AS veloci,
+       sum(CASE WHEN o.court_speed <= 40 THEN 1 ELSE 0 END) AS lenti,
 
        -- lettura lorda: scarto medio dall'attesa Elo, effetto della superficie incluso
-       round(100.0 * avg(CASE WHEN o.court_speed >= 55 THEN o.residuo END), 2) AS scarto_veloci,
-       round(100.0 * avg(CASE WHEN o.court_speed <= 45 THEN o.residuo END), 2) AS scarto_lenti,
-       round(corr(o.residuo, o.court_speed)::numeric, 3) AS correlazione,
+       round(100.0 * avg(CASE WHEN o.court_speed >= 60 THEN o.residuo END), 2) AS scarto_veloci,
+       round(100.0 * avg(CASE WHEN o.court_speed <= 40 THEN o.residuo END), 2) AS scarto_lenti,
 
        -- lettura netta: quanta parte di quel divario sopravvive una volta tolta la superficie
-       round(100.0 * avg(CASE WHEN o.court_speed >= 55 THEN o.residuo_netto END), 2) AS scarto_veloci_netto,
-       round(100.0 * avg(CASE WHEN o.court_speed <= 45 THEN o.residuo_netto END), 2) AS scarto_lenti_netto
+       round(100.0 * avg(CASE WHEN o.court_speed >= 60 THEN o.residuo_netto END), 2) AS scarto_veloci_netto,
+       round(100.0 * avg(CASE WHEN o.court_speed <= 40 THEN o.residuo_netto END), 2) AS scarto_lenti_netto
 
 
 FROM osservazioni o, player p
@@ -26,7 +25,7 @@ WHERE p.player_id = o.player_id
   AND o.court_speed IS NOT NULL
 GROUP BY p.player_id, p.first_name, p.last_name
 -- almeno quaranta incontri per fascia, altrimenti le due medie non sono confrontabili fra loro
-HAVING sum(CASE WHEN o.court_speed >= 55 THEN 1 ELSE 0 END) >= 40
-   AND sum(CASE WHEN o.court_speed <= 45 THEN 1 ELSE 0 END) >= 40
-ORDER BY correlazione DESC
+HAVING sum(CASE WHEN o.court_speed >= 60 THEN 1 ELSE 0 END) >= 40   
+   AND sum(CASE WHEN o.court_speed <= 40 THEN 1 ELSE 0 END) >= 40  
+ORDER BY scarto_veloci DESC
 LIMIT 100;
