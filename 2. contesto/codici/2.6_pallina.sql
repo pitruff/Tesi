@@ -4,7 +4,13 @@
 --qui possiamo solo valutare i numeri provenienti dai tornei maggiori dal 2012 al 2020, perché questa è la copertura maggiore trovata
 
 
---tabella delle palle (da speedcourt.com)
+-- Tabella dell'abbinamento storico fra torneo e marca di palla.
+-- Fonte: Courtspeed, sezione ATP Ball Types by Tournament
+-- (https://courtspeed.com/balls/), consultata ad agosto 2026.
+-- I valori sono trascritti dalla tabella pubblicata dal sito e riprodotti qui
+-- a soli fini di ricerca accademica e senza scopo di lucro; il sito non dichiara
+-- una licenza d'uso, e ogni diritto sulla raccolta originaria resta dei
+-- rispettivi titolari.
 CREATE TABLE palla_torneo (
     torneo        TEXT     NOT NULL,
     stagione      SMALLINT NOT NULL,
